@@ -1,0 +1,313 @@
+==========================================
+   HOSPITAL PATIENT MANAGEMENT SYSTEM
+   Queue and Priority Queue demonstration
+==========================================
+
+------------------ MENU ------------------
+ Waiting -> Regular: 0 | Emergency: 0
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 1
+
+--- Register Regular Patient ---
+Enter patient ID (positive number): 101
+Enter patient name: Arun Kumar
+Enter age (0-120): 30
+Enter illness: Fever
+
+Registered successfully. Position in regular queue: 1
+
+------------------ MENU ------------------
+ Waiting -> Regular: 1 | Emergency: 0
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 1
+
+--- Register Regular Patient ---
+Enter patient ID (positive number): 102
+Enter patient name: Bina Joseph
+Enter age (0-120): 45
+Enter illness: Back pain
+
+Registered successfully. Position in regular queue: 2
+
+------------------ MENU ------------------
+ Waiting -> Regular: 2 | Emergency: 0
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 1
+
+--- Register Regular Patient ---
+Enter patient ID (positive number): 101
+ID 101 is already registered. Please use a different ID.
+Enter patient ID (positive number): 103
+Enter patient name: Chandni R.
+Enter age (0-120): abc
+That is not a valid whole number. Try again.
+Enter age (0-120): 22
+Enter illness: Cold
+
+Registered successfully. Position in regular queue: 3
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 0
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 2
+
+--- Register Emergency Patient ---
+Enter patient ID (positive number): 201
+Enter patient name: Mona Thomas
+Enter age (0-120): 40
+Enter illness: Sprain
+Severity levels:
+  1. Critical  (treated first)
+  2. Serious
+  3. Moderate
+Choose severity (1-3): 3
+
+Registered successfully. Current position in emergency queue: 1 of 1
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 1
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 2
+
+--- Register Emergency Patient ---
+Enter patient ID (positive number): 202
+Enter patient name: Sam Varghese
+Enter age (0-120): 52
+Enter illness: Chest pain
+Severity levels:
+  1. Critical  (treated first)
+  2. Serious
+  3. Moderate
+Choose severity (1-3): 1
+
+Registered successfully. Current position in emergency queue: 1 of 2
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 2
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 2
+
+--- Register Emergency Patient ---
+Enter patient ID (positive number): 203
+Enter patient name: Neha George
+Enter age (0-120): 28
+Enter illness: Fracture
+Severity levels:
+  1. Critical  (treated first)
+  2. Serious
+  3. Moderate
+Choose severity (1-3): 2
+
+Registered successfully. Current position in emergency queue: 2 of 3
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 3
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 2
+
+--- Register Emergency Patient ---
+Enter patient ID (positive number): 204
+Enter patient name: Rahul Das
+Enter age (0-120): 61
+Enter illness: Heart attack
+Severity levels:
+  1. Critical  (treated first)
+  2. Serious
+  3. Moderate
+Choose severity (1-3): 1
+
+Registered successfully. Current position in emergency queue: 2 of 4
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 4
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 9
+
+Invalid choice. Please enter a number from 1 to 7.
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 4
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 3
+
+--- Regular Queue (First-Come-First-Served) ---
+Pos   ID     Name                      Age  Illness                       
+--------------------------------------------------------------------
+1     101    Arun Kumar                30   Fever                         
+2     102    Bina Joseph               45   Back pain                     
+3     103    Chandni R.                22   Cold                          
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 4
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 4
+
+--- Emergency Queue (Most Severe First) ---
+Pos   ID     Name                      Age  Illness                        Severity 
+--------------------------------------------------------------------------------
+1     202    Sam Varghese              52   Chest pain                     Critical 
+2     204    Rahul Das                 61   Heart attack                   Critical 
+3     203    Neha George               28   Fracture                       Serious  
+4     201    Mona Thomas               40   Sprain                         Moderate 
+
+------------------ MENU ------------------
+ Waiting -> Regular: 3 | Emergency: 4
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 5
+
+Now treating (regular): ID 101, Arun Kumar, age 30, Fever
+Doctor: Dr. Meera Nair (General Physician) | Patients treated so far: 1
+
+------------------ MENU ------------------
+ Waiting -> Regular: 2 | Emergency: 4
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 6
+
+Now treating (EMERGENCY): ID 202, Sam Varghese, age 52, Chest pain [Critical]
+Doctor: Dr. Arjun Menon (Emergency Medicine) | Patients treated so far: 1
+
+------------------ MENU ------------------
+ Waiting -> Regular: 2 | Emergency: 3
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 6
+
+Now treating (EMERGENCY): ID 204, Rahul Das, age 61, Heart attack [Critical]
+Doctor: Dr. Arjun Menon (Emergency Medicine) | Patients treated so far: 2
+
+------------------ MENU ------------------
+ Waiting -> Regular: 2 | Emergency: 2
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 4
+
+--- Emergency Queue (Most Severe First) ---
+Pos   ID     Name                      Age  Illness                        Severity 
+--------------------------------------------------------------------------------
+1     203    Neha George               28   Fracture                       Serious  
+2     201    Mona Thomas               40   Sprain                         Moderate 
+
+------------------ MENU ------------------
+ Waiting -> Regular: 2 | Emergency: 2
+------------------------------------------
+ 1. Register regular patient
+ 2. Register emergency patient
+ 3. Display regular queue
+ 4. Display emergency queue
+ 5. Call next regular patient
+ 6. Call highest-priority emergency patient
+ 7. Exit
+------------------------------------------
+Enter your choice (1-7): 7
+
+Thank you for using the system. Goodbye!
