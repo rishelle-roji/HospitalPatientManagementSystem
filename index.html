@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Patient Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✚</span><div><b>CareQueue</b><small>Patient Management</small></div></div>
+    <nav>
+      <a href="#dashboard" data-nav="dashboard" class="active">🏥 Dashboard</a>
+      <a href="#how" data-nav="how">💡 How it works</a>
+      <a href="#about" data-nav="about">👩‍⚕️ About</a>
+    </nav>
+    <p class="side-note">Queue + Priority Queue<br>Java DSA mini project</p>
+  </aside>
+
+  <main>
+    <section id="dashboard" class="view active">
+      <header class="top">
+        <h1>Welcome to the waiting room</h1>
+        <p>Register patients, call the next one in, and watch both queues change live.</p>
+      </header>
+      <p id="message" role="status"></p>
+
+      <div class="stats">
+        <div class="stat"><span>Regular waiting</span><b id="s-regular">0</b></div>
+        <div class="stat"><span>Emergency waiting</span><b id="s-emergency">0</b></div>
+        <div class="stat"><span>Patients treated</span><b id="s-treated">0</b></div>
+        <div class="stat"><span>Last called</span><b id="s-last" class="small">None yet</b></div>
+      </div>
+
+      <div class="cols">
+        <section class="card">
+          <h2>Register a patient</h2>
+          <div class="seg">
+            <button type="button" data-type="regular" class="on">Regular</button>
+            <button type="button" data-type="emergency">Emergency</button>
+          </div>
+          <form id="patient-form">
+            <input id="id" type="number" min="1" placeholder="Patient ID" required>
+            <input id="name" type="text" maxlength="25" placeholder="Full name" required>
+            <input id="age" type="number" min="0" max="120" placeholder="Age" required>
+            <input id="illness" type="text" maxlength="30" placeholder="Illness" required>
+            <div id="severity-row" hidden>
+              <span>Severity</span>
+              <button type="button" class="pill Critical on" data-sev="Critical">Critical</button>
+              <button type="button" class="pill Serious" data-sev="Serious">Serious</button>
+              <button type="button" class="pill Moderate" data-sev="Moderate">Moderate</button>
+            </div>
+            <button type="submit" class="primary">Register patient</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Regular queue <small>First come, first served</small></h2>
+          <p class="doctor" id="regular-doctor"></p>
+          <div id="regular-list" class="chips"></div>
+          <button id="call-regular" class="primary">Call next regular patient</button>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>Emergency queue <small>Most severe first, then earliest arrival</small></h2>
+        <p class="doctor" id="emergency-doctor"></p>
+        <div id="lanes"></div>
+        <button id="call-emergency" class="primary alert">Call highest-priority patient</button>
+        <details class="heap">
+          <summary>Show internal heap array</summary>
+          <div id="heap-strip" class="chips"></div>
+          <p class="note">Java stores a PriorityQueue as a heap, which is only partly sorted. Only the first box is guaranteed to be the next patient, so the lanes above show the real calling order.</p>
+        </details>
+      </section>
+
+      <section class="card">
+        <h2>Operation log</h2>
+        <ul id="log"><li class="empty">Nothing yet. Register a patient to begin.</li></ul>
+      </section>
+    </section>
+
+    <section id="how" class="view">
+      <header class="top"><h1>How it works</h1><p>Two queues, two jobs.</p></header>
+      <div class="cols">
+        <section class="card">
+          <h2>Queue (FIFO)</h2>
+          <p>Regular patients join at the rear and are called from the front, so the one who arrived first is seen first. In Java this is a <code>Queue</code> using <code>add()</code> and <code>poll()</code>.</p>
+        </section>
+        <section class="card">
+          <h2>PriorityQueue</h2>
+          <p>Emergency patients are ordered by a custom comparator, so a Critical patient is always called before a Serious or Moderate one, whenever they arrived.</p>
+        </section>
+      </div>
+      <section class="card">
+        <h2>The comparator rule</h2>
+        <ol>
+          <li>Smaller priority number is more urgent: Critical = 1, Serious = 2, Moderate = 3.</li>
+          <li>If severity is equal, the patient with the earlier arrival number goes first.</li>
+        </ol>
+        <p class="note">Example: add Moderate, Critical, Serious. Heap order may be Critical, Moderate, Serious, but the calling order is always Critical, Serious, Moderate.</p>
+      </section>
+    </section>
+
+    <section id="about" class="view">
+      <header class="top"><h1>About this project</h1></header>
+      <section class="card">
+        <h2>Hospital Patient Management System</h2>
+        <p>The main project is a Java console application. This page is a visual demo of the same logic, written in JavaScript because browsers cannot run Java.</p>
+        <p><b>Student:</b> Rishelle Roji<br><b>Class:</b> S3 CSE-C<br><b>College:</b> Amal Jyothi College of Engineering</p>
+        <p class="note">The Java source is in the <code>src/</code> folder of this repository.</p>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
