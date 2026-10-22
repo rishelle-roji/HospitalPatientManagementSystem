@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Patient Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hospital Patient Management System</h1>
+    <p>Queue and Priority Queue demo. The full project is the Java console app in <code>src/</code>.</p>
+  </header>
+
+  <main>
+    <p id="message" role="status"></p>
+
+    <section class="card">
+      <h2>Register Patient</h2>
+      <form id="patient-form">
+        <input id="id" type="number" min="1" placeholder="Patient ID" required>
+        <input id="name" type="text" maxlength="25" placeholder="Name" required>
+        <input id="age" type="number" min="0" max="120" placeholder="Age" required>
+        <input id="illness" type="text" maxlength="30" placeholder="Illness" required>
+        <select id="type">
+          <option value="regular">Regular</option>
+          <option value="emergency">Emergency</option>
+        </select>
+        <select id="severity" hidden>
+          <option>Critical</option>
+          <option>Serious</option>
+          <option>Moderate</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Regular Queue <small>(FCFS)</small></h2>
+        <p class="doctor" id="regular-doctor"></p>
+        <ol id="regular-list"></ol>
+        <button id="call-regular">Call next regular patient</button>
+      </section>
+
+      <section class="card">
+        <h2>Emergency Queue <small>(Priority)</small></h2>
+        <p class="doctor" id="emergency-doctor"></p>
+        <ol id="emergency-list"></ol>
+        <button id="call-emergency">Call highest-priority patient</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
